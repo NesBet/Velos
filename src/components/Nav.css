@@ -1,0 +1,173 @@
+@media only screen and (min-width:768px)
+{
+
+
+
+.list:hover {
+  scale: 1.05;
+}
+
+#bars,#cancel
+{
+  display: none;
+}
+
+.navbar
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-self: flex-start;
+  align-self: flex-start;
+  background-color: grey;
+  /*position: fixed;*/
+  padding: 0px;
+}
+.logoflex
+{
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+.navlist
+{
+  width: 75%;
+
+}
+.navitems
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+  padding: 0px;
+}
+.list
+{
+  display:inline;
+  padding: 1%;
+
+}
+.link
+{
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+  color:white;
+  cursor: pointer;
+}
+link:active,.link:hover{
+  color: #ffbe1b;
+}
+
+.navname
+{
+  width: 50%;
+  text-decoration: none;
+  color:white;
+  font-size: 25px;
+  margin:1%;
+
+}
+
+}
+@media only screen and (max-width:768px)
+{
+
+  
+#bars
+{
+  display: flex;
+
+}
+#cancel
+{
+  display: none;
+}
+
+#bars,#cancel
+{
+  font-size: 35px;
+  color:white;
+  position: absolute;
+  top:2;
+  right:0;
+  margin-top: 2%;
+  margin-right: 2%;
+}
+
+.navbar
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: grey;
+}
+.logoflex
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2%;
+
+}
+.navlist
+{
+  width: 100%;
+  position: relative;
+  left:-100%;
+  display: none;
+}
+.navitems
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+.list
+{
+  display:flex;
+  justify-content: center;
+  padding: 1%;
+}
+.link
+{
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+  color:white;
+}
+link:active,.link:hover{
+  color: #ffbe1b;
+}
+.logoflex
+{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.navname
+{
+  width: 50%;
+  text-decoration: none;
+  color:white;
+  font-size: 25px;
+  align-self: center;
+  justify-content: flex-start;
+  text-align: start;
+  margin: 1%;
+
+}
+
+.list:hover
+{
+  scale: 1;
+}
+}

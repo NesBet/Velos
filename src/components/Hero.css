@@ -1,0 +1,124 @@
+.Hero
+{
+    background:url("https://cdn.pixabay.com/photo/2017/09/05/06/57/hotel-2716635_1280.jpg")  center center  no-repeat  fixed;
+    background-size: cover;
+    min-height:100vh;
+    display: flex;
+    flex-direction:  column;
+}
+
+.Hero-banner
+{
+    text-align: center;
+    place-self: center;
+    margin: auto;
+}
+
+.Hero-Head
+{
+    text-transform: uppercase;
+    color: yellow
+}
+
+.Hero-banner p{
+    word-spacing: 2px;
+    color:black;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Hero-btn
+{
+    color: white;
+    background: hsl(44, 84%, 45%);
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top:3%;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.Hero-btn:hover
+{
+    background: hsl(44, 86%, 60%);
+}
+@media only screen and (min-width:768px)
+{
+.Hero
+{
+    flex-wrap: wrap;
+}
+
+.Hero-banner
+{
+    width: 50%;
+    padding: 3%;
+}
+
+.Hero-Head
+{
+    font-size:35px;
+}
+
+.Hero-banner p
+{
+  font-size: 25px;
+}
+
+.Hero-btn
+{
+   padding: 1.5% 2%;
+}
+}
+
+@media (min-width:425px) and (max-width:768px)
+{
+.Hero
+{
+    flex-wrap: nowrap;
+}
+.Hero-Head
+{
+    font-size: 30px;
+}
+.Hero-banner
+{
+    padding: 3%;
+    width: 75%;
+}
+.Hero-banner p
+{
+   font-size:25px;
+}
+.Hero-btn 
+{
+   padding:2%;
+}
+}
+
+@media only screen and (max-width:425px)
+{
+    
+.Hero
+{
+    flex-wrap: nowrap;
+}
+.Hero-banner
+{
+    width: 75%;
+    padding: 3%;
+}
+.Hero-Head
+{
+    font-size: 30px;
+}
+.Hero-banner p{
+    font-size: 20px;
+}
+.Hero-btn 
+{
+    padding: 2%;
+}
+}
