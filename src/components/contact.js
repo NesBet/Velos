@@ -3,7 +3,7 @@ const Contact=()=>
 {
     return(
         <>
-            <div id="Contact" className="contact-outer-div">
+            <div id="Contact" className="contact-outer-div" style={{ display: 'flex' }}>
 	            <div className="contact-left-side">
 		        	<p><span style={{fontSize:'40px'}}>Contact us </span><br/><span style={{fontSize:"20px"}}>We love conversations. Let us talk ! </span></p>
 			        <br/>
