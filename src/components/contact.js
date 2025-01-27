@@ -69,7 +69,7 @@ const Contact = () => {
             <textarea
               className="contact-textarea"
               name="message" // Match EmailJS template variable
-              placeholder="Write  your message here..."
+              placeholder="Write your message here..."
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}
