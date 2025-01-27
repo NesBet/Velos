@@ -50,7 +50,7 @@ const Contact = () => {
               className="contact-input"
               type="text"
               name="from_name" // Match EmailJS template variable
-              placeholder="Enter full name"
+              placeholder="Your full name..."
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -60,7 +60,7 @@ const Contact = () => {
               className="contact-input"
               type="email"
               name="from_email" // Match EmailJS template variable
-              placeholder="Enter email address"
+              placeholder="Your email address..."
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -69,7 +69,7 @@ const Contact = () => {
             <textarea
               className="contact-textarea"
               name="message" // Match EmailJS template variable
-              placeholder="Tell us about your message"
+              placeholder="Write  your message here..."
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}

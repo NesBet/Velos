@@ -14,7 +14,7 @@ const Footer=()=>
         <div className="footer_details">
                 <h2>Velos Lifetime Lodge</h2>
                 <address>Located in Ongata Rongai, Kajiado County, Kenya</address>
-                <p>Copyright &copy; 2024 Velos Lifetime Lounge</p>
+                <p>Copyright &copy; 2025 Velos Lifetime Lounge</p>
         </div>
     </>
     );
