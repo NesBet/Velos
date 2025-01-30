@@ -7,7 +7,7 @@
   <li>Features</li>
   <li>Tech Stack</li>
   <li>Demo</li>
-  <li>Installation</li>
+  <li>Developer</li>
 </ul>
 
 <h2>Features</h2>
@@ -28,18 +28,11 @@
 
 <h2>Demo</h2>
 <ul>
-  <li>You can see the live page of the lodge landing page <a href='https://velos-lodge.vercel.app/'>here</a>.</li>
+  <li>You can see the live page of the lodge landing page <a href='https://velos-lodge.vercel.app/' target="_blank" rel="noopener noreferrer">here</a>.</li>
 </ul>
 
 <h2>Installation</h2>
 <span>To install and run this game locally, follow these steps:</span>
-<li><b>Clone the repository:</b></li>
-<code>git clone https://github.com/prasannavb/lodge-LandingPage.git</code><br/>
-<li><b>Navigate to the project directory:</b></li>
-<code>cd lodgeLandingPage</code><br/>
-<li><b>Install dependencies:</b></li>
-<code>npm install</code><br/>
-<li><b>Start the development server:</b></li>
-<code>npm start</code><br/>
+
 
 
