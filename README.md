@@ -32,8 +32,10 @@
 </ul>
 
 <h2>Developer</h2>
-<span>The developer will like to hear from you about improvements that can be made on this webite</span>
-<ul><span>Feel free to contact me via my portfolio attached below oor by clicking <a href='https://neshkibet.vercel.app' target="_blank" rel="noopener noreferrer"><b>here</b></a></span></ul>
+<ul>
+<li>The developer will like to hear from you about improvements that can be made on this webite</li>
+<li>Feel free to contact me via my portfolio attached below oor by clicking <a href='https://neshkibet.vercel.app' target="_blank" rel="noopener noreferrer"><b>here</b></a></li>
+</ul>
 <p>
 ##
     https://neshkibet.vercel.app
