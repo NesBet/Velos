@@ -20,8 +20,8 @@
 
 <h2>Tech Stack</h2>
 <ul>
-  <li>HTML</li>
-  <li>CSS</li>
+  <li>HTML: The building block of websites</li>
+  <li>CSS: A tool for styling websites</li>
   <li>React.js: A JavaScript library for building user interfaces.</li>
   <li>Create React App: A tool for creating React applications with no build configuration.</li>
 </ul>
@@ -36,9 +36,4 @@
 <li>The developer will like to hear from you about improvements that can be made on this webite</li>
 <li>Feel free to contact me via my portfolio attached below or by clicking <a href='https://neshkibet.vercel.app' target="_blank" rel="noopener noreferrer"><b>here</b></a></li>
 </ul>
-<p>
-##
-    https://neshkibet.vercel.app
-##
-</p>
 
