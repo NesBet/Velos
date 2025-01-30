@@ -1,6 +1,6 @@
 # Velos Lifetime Lodge
 
-<p>Welcome to the Velos Lodge project! This project is a lodge landing page created using React. It provides users with information about the lodge, including its amenities, rooms and contact details.</p>
+<p>Welcome to the Velos Lodge project! This project is a lodge landing page created using React. It provides users with information about the lodge, including its amenities and contact details.</p>
 
 <h1>Table of Contents</h1>
 <ul>
