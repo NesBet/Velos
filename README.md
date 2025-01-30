@@ -31,8 +31,12 @@
   <li>You can see the live page of the lodge landing page <a href='https://velos-lodge.vercel.app/' target="_blank" rel="noopener noreferrer">here</a>.</li>
 </ul>
 
-<h2>Installation</h2>
-<span>To install and run this game locally, follow these steps:</span>
+<h2>Developer</h2>
+<span>The developer will like to hear from you about imrpvemements that can be made on this webite</span>
+<span>Feel free to contact me via my portfolio attached below oor by clicking <a href='https://neshkibet.vercel.app' target="_blank" rel="noopener noreferrer"><b>here</b></a></span>
+##
+    https://neshkibet.vercel.app
+##
 
 
 
