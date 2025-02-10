@@ -4,7 +4,7 @@
 
 <h1>Table of Contents</h1>
 <ul>
-  <li>[Features](#features)</li>
+  <li>Features</li>
   <li>Tech Stack</li>
   <li>Demo</li>
   <li>Developer</li>
