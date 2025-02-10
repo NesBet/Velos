@@ -1,6 +1,6 @@
 .Hero
 {
-    background:url("https://github.com/NesBet/Velos/blob/main/src/components/images/a132faefb1664012ba703241fd366e63.jpg")  center center  no-repeat  fixed;
+    background:url("https://cdn.pixabay.com/photo/2017/09/05/06/57/hotel-2716635_1280.jpg")  center center  no-repeat  fixed;
     background-size: cover;
     min-height:100vh;
     display: flex;
