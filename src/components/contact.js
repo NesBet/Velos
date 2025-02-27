@@ -75,9 +75,9 @@ const Contact = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              {name.trim().length > 0 && name.trim().length < 2 && (
+              {name.trim().length > 0 && name.trim().length < 3 && (
                 <small className="error-message">
-                  Name must be at least 2 characters
+                  Name must be at least 3 characters
                 </small>
               )}
             </div>

@@ -269,7 +269,6 @@
     opacity: 0.7;
 }
 
-/* Optional: Add a transition effect for the text change */
 .button-content {
     transition: opacity 0.2s ease;
 }
