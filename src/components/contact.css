@@ -37,6 +37,7 @@
 
 .form-group {
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .form-group label {
@@ -44,37 +45,66 @@
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
+/* Improved input styling */
 .contact-input,
 .contact-textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-input::placeholder,
 .contact-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: #95a5a6;
+    opacity: 0.8;
 }
 
 .contact-input:focus,
 .contact-textarea:focus {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: #3498db;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
     outline: none;
+    transform: translateY(-1px);
 }
 
 .contact-textarea {
     height: 120px;
     resize: vertical;
+    min-height: 120px;
+    max-height: 250px;
 }
 
+/* Invalid state styling */
+.contact-input.invalid,
+.contact-textarea.invalid {
+    border-color: #e74c3c;
+    background-color: #fff;
+}
+
+.contact-input.invalid:focus,
+.contact-textarea.invalid:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: block;
+    font-weight: 500;
+}
+
+/* Submit button styling */
 .contact-submit {
     width: 100%;
     padding: 1rem;
@@ -86,11 +116,18 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-submit:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+.contact-submit:active:not(:disabled) {
+    transform: translateY(0);
 }
 
 .contact-submit.disabled {
@@ -99,12 +136,7 @@
     opacity: 0.7;
 }
 
-.error-message {
-    color: #e74c3c;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-}
-
+/* Loading spinner */
 .loading-spinner {
     display: inline-block;
     width: 20px;
@@ -113,12 +145,34 @@
     border-radius: 50%;
     border-top-color: #fff;
     animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 @keyframes spin {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Focus visible outline for accessibility */
+.contact-input:focus-visible,
+.contact-textarea:focus-visible,
+.contact-submit:focus-visible {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Success state */
+.form-group.success .contact-input,
+.form-group.success .contact-textarea {
+    border-color: #2ecc71;
+}
+
+/* Hover effects */
+.contact-input:hover,
+.contact-textarea:hover {
+    border-color: rgba(52, 152, 219, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -133,5 +187,33 @@
 
     .contact-header h2 {
         font-size: 1.75rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .contact-input,
+    .contact-textarea {
+        padding: 10px 14px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .contact-input,
+    .contact-textarea {
+        background-color: rgba(255, 255, 255, 0.95);
+        color: #2c3e50;
+    }
+
+    .contact-input::placeholder,
+    .contact-textarea::placeholder {
+        color: #95a5a6;
+    }
+
+    .contact-input:focus,
+    .contact-textarea:focus {
+        background-color: #ffffff;
     }
 }
