@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 
@@ -8,9 +8,23 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  // Check form validity whenever inputs change
+  useEffect(() => {
+    setIsFormValid(
+      name.trim() !== "" && email.trim() !== "" && message.trim() !== "",
+    );
+  }, [name, email, message]);
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // Double-check validity before submitting
+    if (!isFormValid) {
+      return;
+    }
+
     setIsSubmitting(true);
 
     emailjs
@@ -38,9 +52,6 @@ const Contact = () => {
       );
   };
 
-  const isFormValid =
-    name.trim() !== "" && email.trim() !== "" && message.trim() !== "";
-
   return (
     <>
       <div id="Contact" className="contact-outer-div">
@@ -54,7 +65,7 @@ const Contact = () => {
               <input
                 className="contact-input"
                 type="text"
-                name="from_name" // Match EmailJS template variable
+                name="from_name"
                 placeholder="Your full name..."
                 required
                 value={name}
@@ -65,7 +76,7 @@ const Contact = () => {
               <input
                 className="contact-input"
                 type="email"
-                name="from_email" // Match EmailJS template variable
+                name="from_email"
                 placeholder="Your email address..."
                 required
                 value={email}
@@ -75,7 +86,7 @@ const Contact = () => {
             <div className="form-group">
               <textarea
                 className="contact-textarea"
-                name="message" // Match EmailJS template variable
+                name="message"
                 placeholder="Write your message here..."
                 required
                 value={message}
