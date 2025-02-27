@@ -62,9 +62,7 @@ const Contact = () => {
           </div>
           <form ref={form} onSubmit={sendEmail} className="contact-form">
             <div className="form-group">
-              <label htmlFor="name">Name</label>
               <input
-                id="name"
                 className={`contact-input ${
                   name.trim().length > 0 && name.trim().length < 2
                     ? "invalid"
@@ -72,7 +70,7 @@ const Contact = () => {
                 }`}
                 type="text"
                 name="from_name"
-                placeholder="Enter your name"
+                placeholder="Your Name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -85,9 +83,7 @@ const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email</label>
               <input
-                id="email"
                 className={`contact-input ${
                   email.trim().length > 0 &&
                   !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -96,7 +92,7 @@ const Contact = () => {
                 }`}
                 type="email"
                 name="from_email"
-                placeholder="Enter your email"
+                placeholder="Your Email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -110,16 +106,14 @@ const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Message</label>
               <textarea
-                id="message"
                 className={`contact-textarea ${
                   message.trim().length > 0 && message.trim().length < 10
                     ? "invalid"
                     : ""
                 }`}
                 name="message"
-                placeholder="What would you like to tell us?"
+                placeholder="Your Message"
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
