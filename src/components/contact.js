@@ -10,17 +10,18 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
-  // Check form validity whenever inputs change
   useEffect(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsFormValid(
-      name.trim() !== "" && email.trim() !== "" && message.trim() !== "",
+      name.trim().length >= 2 && // At least 2 characters for name
+        emailRegex.test(email.trim()) && // Valid email format
+        message.trim().length >= 10, // At least 10 characters for message
     );
   }, [name, email, message]);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Double-check validity before submitting
     if (!isFormValid) {
       return;
     }
@@ -38,7 +39,6 @@ const Contact = () => {
         (result) => {
           console.log("Email sent!", result.text);
           alert("Message sent successfully!");
-          // Clear form fields
           setName("");
           setEmail("");
           setMessage("");
@@ -63,7 +63,11 @@ const Contact = () => {
           <form ref={form} onSubmit={sendEmail} className="contact-form">
             <div className="form-group">
               <input
-                className="contact-input"
+                className={`contact-input ${
+                  name.trim().length > 0 && name.trim().length < 2
+                    ? "invalid"
+                    : ""
+                }`}
                 type="text"
                 name="from_name"
                 placeholder="Your full name..."
@@ -71,10 +75,20 @@ const Contact = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
+              {name.trim().length > 0 && name.trim().length < 2 && (
+                <small className="error-message">
+                  Name must be at least 2 characters
+                </small>
+              )}
             </div>
             <div className="form-group">
               <input
-                className="contact-input"
+                className={`contact-input ${
+                  email.trim().length > 0 &&
+                  !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+                    ? "invalid"
+                    : ""
+                }`}
                 type="email"
                 name="from_email"
                 placeholder="Your email address..."
@@ -82,21 +96,40 @@ const Contact = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              {email.trim().length > 0 &&
+                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && (
+                  <small className="error-message">
+                    Please enter a valid email address
+                  </small>
+                )}
             </div>
             <div className="form-group">
               <textarea
-                className="contact-textarea"
+                className={`contact-textarea ${
+                  message.trim().length > 0 && message.trim().length < 10
+                    ? "invalid"
+                    : ""
+                }`}
                 name="message"
                 placeholder="Write your message here..."
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
+              {message.trim().length > 0 && message.trim().length < 10 && (
+                <small className="error-message">
+                  Message must be at least 10 characters
+                </small>
+              )}
             </div>
             <button
               className={`contact-submit ${isFormValid ? "active" : "disabled"}`}
               type="submit"
               disabled={!isFormValid || isSubmitting}
+              style={{
+                backgroundColor: isFormValid ? "" : "#cccccc",
+                cursor: isFormValid ? "pointer" : "not-allowed",
+              }}
             >
               {isSubmitting ? (
                 <span className="loading-spinner"></span>
