@@ -1,212 +1,118 @@
-.contact-outer-div {
-    background: linear-gradient(135deg, #1a237e, #0d1433);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 4rem 2rem;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
+.contact-section {
+    padding: 4rem 0;
+    background-color: #f5f7fa;
 }
 
-.contact-outer-div::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("https://i.imgur.com/JWYbJ0A.png");
-    opacity: 0.05;
-    pointer-events: none;
+.contact-outer-div {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 2rem;
 }
 
 .contact-left-side {
-    color: white;
-    width: 55%;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    animation: fadeInLeft 1s ease-out;
-}
-
-.contact-left-side h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.contact-left-side h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 80px;
-    height: 4px;
-    background-color: #ff9800;
-    border-radius: 2px;
-}
-
-.contact-left-side p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.contact-right-side {
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
-    width: 45%;
+    width: 100%;
     padding: 2rem;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    animation: fadeInRight 1s ease-out;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
 }
 
+.form-group label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
 .contact-input,
 .contact-textarea {
     width: 100%;
-    padding: 1rem;
-    margin-top: 1rem;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
-    color: #333;
-    outline: none;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .contact-input:focus,
 .contact-textarea:focus {
-    background-color: #fff;
-    box-shadow:
-        0 0 0 2px #ff9800,
-        inset 0 2px 5px rgba(0, 0, 0, 0.05);
-    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    outline: none;
 }
 
 .contact-textarea {
     height: 120px;
-    resize: none;
+    resize: vertical;
 }
 
 .contact-submit {
-    padding: 1rem 2rem;
-    width: auto;
-    margin-top: 1.5rem;
-    position: relative;
-    background: linear-gradient(45deg, #ff9800, #ff5722);
-    color: white;
+    width: 100%;
+    padding: 1rem;
     border: none;
-    border-radius: 30px;
-    font-weight: 600;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    overflow: hidden;
+}
+
+.contact-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
 .contact-submit.disabled {
-    background: #cccccc !important;
+    background: #95a5a6;
     cursor: not-allowed;
     opacity: 0.7;
-    pointer-events: none;
 }
 
-.contact-submit.active {
-    background: linear-gradient(45deg, #ff9800, #ff5722);
-    cursor: pointer;
-}
-
-.contact-submit:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(255, 152, 0, 0.4);
-}
-
-.contact-submit:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.3);
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
 }
 
 .loading-spinner {
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
-}
-
-.contact-input.invalid,
-.contact-textarea.invalid {
-    border: 1px solid #ff3333;
-    background-color: rgba(255, 51, 51, 0.1);
-}
-
-.error-message {
-    color: #ff3333;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-    display: block;
-}
-
-/* .contact-img {
-    height: 90%;
-    width: 90%;
-    align-self: center;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
-}
-
-.contact-img:hover {
-    transform: scale(1.03) translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-} */
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -217,27 +123,15 @@
 
 @media (max-width: 768px) {
     .contact-outer-div {
-        flex-direction: column;
-        padding: 3rem 1.5rem;
+        margin: 0 1rem;
+        padding: 1.5rem;
     }
 
     .contact-left-side {
-        width: 100%;
-        padding: 2rem 1rem;
-        text-align: center;
-    }
-
-    .contact-left-side h2::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .contact-right-side {
-        width: 100%;
         padding: 1rem;
     }
 
-    .contact-submit {
-        width: 100%;
+    .contact-header h2 {
+        font-size: 1.75rem;
     }
 }

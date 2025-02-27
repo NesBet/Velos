@@ -53,16 +53,18 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <section className="contact-section">
       <div id="Contact" className="contact-outer-div">
         <div className="contact-left-side">
           <div className="contact-header">
-            <h2>Contact us</h2>
-            <p>We love conversations. Let us talk!</p>
+            <h2>Get in Touch</h2>
+            <p>Have questions? We'd love to hear from you.</p>
           </div>
           <form ref={form} onSubmit={sendEmail} className="contact-form">
             <div className="form-group">
+              <label htmlFor="name">Name</label>
               <input
+                id="name"
                 className={`contact-input ${
                   name.trim().length > 0 && name.trim().length < 2
                     ? "invalid"
@@ -70,7 +72,7 @@ const Contact = () => {
                 }`}
                 type="text"
                 name="from_name"
-                placeholder="Your full name..."
+                placeholder="Enter your name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -81,8 +83,11 @@ const Contact = () => {
                 </small>
               )}
             </div>
+
             <div className="form-group">
+              <label htmlFor="email">Email</label>
               <input
+                id="email"
                 className={`contact-input ${
                   email.trim().length > 0 &&
                   !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -91,7 +96,7 @@ const Contact = () => {
                 }`}
                 type="email"
                 name="from_email"
-                placeholder="Your email address..."
+                placeholder="Enter your email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -103,15 +108,18 @@ const Contact = () => {
                   </small>
                 )}
             </div>
+
             <div className="form-group">
+              <label htmlFor="message">Message</label>
               <textarea
+                id="message"
                 className={`contact-textarea ${
                   message.trim().length > 0 && message.trim().length < 10
                     ? "invalid"
                     : ""
                 }`}
                 name="message"
-                placeholder="Write your message here..."
+                placeholder="What would you like to tell us?"
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -122,14 +130,11 @@ const Contact = () => {
                 </small>
               )}
             </div>
+
             <button
               className={`contact-submit ${isFormValid ? "active" : "disabled"}`}
               type="submit"
               disabled={!isFormValid || isSubmitting}
-              style={{
-                backgroundColor: isFormValid ? "" : "#cccccc",
-                cursor: isFormValid ? "pointer" : "not-allowed",
-              }}
             >
               {isSubmitting ? (
                 <span className="loading-spinner"></span>
@@ -140,7 +145,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
