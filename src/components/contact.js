@@ -131,9 +131,12 @@ const Contact = () => {
               disabled={!isFormValid || isSubmitting}
             >
               {isSubmitting ? (
-                <span className="loading-spinner"></span>
+                <span className="button-content">
+                  <span className="spinner"></span>
+                  Sending...
+                </span>
               ) : (
-                "Send Message"
+                <span className="button-content">Send Message</span>
               )}
             </button>
           </form>
