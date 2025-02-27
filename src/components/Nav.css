@@ -1,173 +1,261 @@
-@media only screen and (min-width:768px)
-{
-
-
-
-.list:hover {
-  scale: 1.05;
+:root {
+    --nav-bg: #1a237e;
+    --nav-bg-light: #3949ab;
+    --nav-hover: #ff9800;
+    --nav-text: #ffffff;
+    --nav-active: #ffb300;
 }
 
-#bars,#cancel
-{
-  display: none;
+/* Desktop Styles */
+@media only screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background: linear-gradient(to right, #1a237e, #283593);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+        background: rgba(26, 35, 126, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    .logoflex {
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        padding-left: 2rem;
+    }
+
+    .navlist {
+        width: 75%;
+    }
+
+    .navitems {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: right;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .list {
+        display: inline-flex;
+        padding: 0 1rem;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .list::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background-color: var(--nav-hover);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    .list:hover::after {
+        width: 80%;
+    }
+
+    .list:hover {
+        transform: translateY(-3px);
+    }
+
+    .link {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 1rem 0.5rem;
+        color: var(--nav-text);
+        cursor: pointer;
+        transition: color 0.3s ease;
+        position: relative;
+        letter-spacing: 0.5px;
+    }
+
+    .link:active,
+    .link:hover {
+        color: var(--nav-hover);
+    }
+
+    .navname {
+        width: 50%;
+        text-decoration: none;
+        color: var(--nav-text);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 1%;
+        position: relative;
+        transition: all 0.3s ease;
+        letter-spacing: 1px;
+    }
+
+    .navname:hover {
+        color: var(--nav-hover);
+    }
+
+    #bars,
+    #cancel {
+        display: none;
+    }
 }
 
-.navbar
-{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-self: flex-start;
-  align-self: flex-start;
-  background-color: grey;
-  /*position: fixed;*/
-  padding: 0px;
-}
-.logoflex
-{
-  width: 25%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-}
-.navlist
-{
-  width: 75%;
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        background: linear-gradient(to right, #1a237e, #283593);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-}
-.navitems
-{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: right;
-  padding: 0px;
-}
-.list
-{
-  display:inline;
-  padding: 1%;
+    .logoflex {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        align-items: center;
+    }
 
-}
-.link
-{
-  text-decoration: none;
-  font-size: 20px;
-  padding: 5px;
-  color:white;
-  cursor: pointer;
-}
-link:active,.link:hover{
-  color: #ffbe1b;
-}
+    .navname {
+        width: auto;
+        text-decoration: none;
+        color: var(--nav-text);
+        font-size: 1.3rem;
+        font-weight: 700;
+        align-self: center;
+        justify-content: flex-start;
+        text-align: start;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
 
-.navname
-{
-  width: 50%;
-  text-decoration: none;
-  color:white;
-  font-size: 25px;
-  margin:1%;
+    #bars {
+        display: flex;
+    }
 
-}
+    #cancel {
+        display: none;
+    }
 
-}
-@media only screen and (max-width:768px)
-{
+    #bars,
+    #cancel {
+        font-size: 1.8rem;
+        color: var(--nav-text);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: none;
+        border: none;
+        outline: none;
+        margin-right: 1rem;
+    }
 
-  
-#bars
-{
-  display: flex;
+    #bars:hover,
+    #cancel:hover {
+        color: var(--nav-hover);
+        transform: rotate(90deg);
+    }
 
-}
-#cancel
-{
-  display: none;
-}
+    .navlist {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background: rgba(26, 35, 126, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        display: none;
+        opacity: 0;
+        z-index: 999;
+    }
 
-#bars,#cancel
-{
-  font-size: 35px;
-  color:white;
-  position: absolute;
-  top:2;
-  right:0;
-  margin-top: 2%;
-  margin-right: 2%;
-}
+    .navlist.active {
+        left: 0;
+        display: block;
+        opacity: 1;
+    }
 
-.navbar
-{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-  background-color: grey;
-}
-.logoflex
-{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 2%;
+    .navitems {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+        margin: 0;
+        list-style: none;
+    }
 
-}
-.navlist
-{
-  width: 100%;
-  position: relative;
-  left:-100%;
-  display: none;
-}
-.navitems
-{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 5px;
-}
-.list
-{
-  display:flex;
-  justify-content: center;
-  padding: 1%;
-}
-.link
-{
-  text-decoration: none;
-  font-size: 20px;
-  padding: 5px;
-  color:white;
-}
-link:active,.link:hover{
-  color: #ffbe1b;
-}
-.logoflex
-{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+    .list {
+        display: flex;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .list:last-child {
+        border-bottom: none;
+    }
+
+    .list:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .link {
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5rem;
+        color: var(--nav-text);
+        width: 100%;
+        text-align: center;
+        transition: color 0.3s ease;
+    }
+
+    .link:active,
+    .link:hover {
+        color: var(--nav-hover);
+    }
 }
 
-.navname
-{
-  width: 50%;
-  text-decoration: none;
-  color:white;
-  font-size: 25px;
-  align-self: center;
-  justify-content: flex-start;
-  text-align: start;
-  margin: 1%;
-
+/* Animation for Mobile Menu */
+@keyframes slideInRight {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-.list:hover
-{
-  scale: 1;
-}
+.navlist.active .list {
+    animation: slideInRight 0.3s forwards;
+    animation-delay: calc(0.1s * var(--i));
 }
